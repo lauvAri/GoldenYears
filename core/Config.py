@@ -9,7 +9,7 @@ if clean_save:
 ocr_save_flag = 'save'  # ocr省钱模式 用于反复调整时 直接使用已保存的ocr结果 部分文件支持
 ocr_output_only = False  # 新增：只输出ocr结果 不要所有ip
 alg = 'yolo'  # yolo / detr / vins 三种算法
-accurate_ocr = False  # 是否使用高精度版OCR, 低精度的是开源paddleocr，高精度的是调用paddle的ocr api（readme有写改key的位置）
+accurate_ocr = True  # 是否使用高精度版OCR, 低精度的是开源paddleocr，高精度的是调用paddle的ocr api（readme有写改key的位置）
 lang = 'zh'  # en / zh  # 输出语言选择
 workflow_only = False     # 只输出json和整体流程图
 
@@ -30,6 +30,7 @@ TaskTable_PATH = "data/task.xlsx"
 
 # adb
 choose_phone = "真机huawei"  #"真机huawei"/"pad"/"真机redmi"
+choose_phone = 'Redmi'
 if choose_phone == "真机huawei":
     DeviceName = "CLB7N18719001673" #USB连接 cmd输入"adb devices"获得DeviceName
     DefaultInputKeyboard = "com.huawei.ohos.inputmethod/com.android.inputmethod.latin.LatinIME"
@@ -39,6 +40,8 @@ elif choose_phone == "pad":
 elif choose_phone == "真机redmi":
     DeviceName = "2d6e3364" #USB连接
     DefaultInputKeyboard = "com.huawei.ohos.inputmethod/com.android.inputmethod.latin.LatinIME"
+elif choose_phone == 'Redmi':
+    DeviceName = 'nfjjnbbimnjj7hi7'
 ADBKeyboard = "com.android.adbkeyboard/.AdbIME"
 # 键盘输入需要安装ADBKeyboard.apk(网上找)
 # 输入法设置： 

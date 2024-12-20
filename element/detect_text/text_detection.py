@@ -132,8 +132,8 @@ def text_detection(input_file='../data/input/30800.jpg', ocr_root='../data/outpu
 
     if accurate_ocr:  # 启动ocr识别高精度版！
         # 在这里写入高精度ocr
-        API_KEY = "xxxxxxxx"  # username 用户名
-        SECRET_KEY = "xxxxxxxx"  # key 密码
+        API_KEY = "tZHH9QvZHZt1Tz5Kri2zrgvh"  # username 用户名
+        SECRET_KEY = "dybdByI3bdLyugbAoia9yPQfVJetrqkn"  # key 密码
 
         pic_dir = input_file
         url = "https://aip.baidubce.com/oauth/2.0/token"

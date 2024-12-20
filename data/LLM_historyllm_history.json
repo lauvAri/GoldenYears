@@ -65,18 +65,10 @@
     },
     {
         "role": "user",
-        "content": "Q：打开淘宝。"
+        "content": "Q：打开微信。"
     },
     {
         "role": "assistant",
-        "content": "A：tap_action：点击['shopping']。"
-    },
-    {
-        "role": "user",
-        "content": "Q：打开淘宝，现在已经进行了的操作有（点击['shopping']）。"
-    },
-    {
-        "role": "assistant",
-        "content": "A：tap_action：点击['淘宝']。"
+        "content": "A：tap_action：点击['微信']。"
     }
 ]
