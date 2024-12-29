@@ -75,8 +75,8 @@ class BaiduLLM(LLM):
         return str(requests.post(url, params=params).json().get("access_token"))
             
     def get_llm_result(self):
-        BAIDU_API_KEY = "84vP3hkoPE9PVXqZIZNj76Kd"
-        BAIDU_SECRET_KEY = "0kmoFnphhG2rSyUdtnHKp6pVl74dvnuj"
+        BAIDU_API_KEY = ""
+        BAIDU_SECRET_KEY = ""
         url = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/completions_pro?access_token=" + self.get_access_token(BAIDU_API_KEY, BAIDU_SECRET_KEY)
 
         Global_LLm_history.add_user_input(self.user_input)

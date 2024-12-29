@@ -1,79 +1,51 @@
-# 📱 VisionTasker 🤖
-[[Paper(arxiv)]](https://arxiv.org/abs/2312.11190) 
+# 夕颜乐龄
 
-[**中文readme**](https://github.com/AkimotoAyako/VisionTasker/blob/main/readme_zh.md)
+本项目为面向老年人的AI手机操作系统，此代码仓库为项目后端代码。
 
+本团队研发的产品精准定位于 60 岁及以上的老年人群体。这一群体在面对智能手机日益复杂的操作时往往存在诸多困难，我们的 AI 手机操作助手旨在为他们提供便捷、易懂的手机操作引导服务，助力其跨越数字鸿沟，畅享科技带来的便利与乐趣。
 
-## 📰 Abstract
-**VisionTasker** introduces a novel two-stage framework combining vision-based UI understanding and LLM task planning for mobile task automation in a step-by-step manner.
-![framework](framework.png)
+## 功能介绍
 
-#### Feature
-1. **Vision-Based UI Understanding**：Translating UI screenshots into natural language explanations using a vision-based approach eliminates the dependency on view hierarchies.
-![界面理解](ui_understanding.png)
-2. **Step-by-Step Task Planning**：Presents one interface at a time to the LLM (in the form of natural language), which determines the next action based on relevant elements within the interface with historical operational information.
+用户在客户端输入请求，服务端程序接收请求后，借助UI理解框架，帮助用户自动操作手机，降低了用户操作手机的复杂度，提高了操作效率。
 
-🥳The method enhances accuracy and practicality, leading to superior performance in mobile task automation.（Successfully automates 147 real-world tasks on Android smartphones, surpassing human performance in complex tasks.）
+## 环境部署
 
-## 📢 Release
-Here's the first version🤗
+### 前置要求
 
-[2024-10-16] The model has been updated🧐
+1. Python 3.8
+2. Android SDK
 
-## 👩‍💻 Prepare
-Hardware: 1. Windows system computer; 2. Android mobile phone with data cable
+### 运行项目
 
-🙌 `Python 3.8` recommended
-
-Make sure you have installed the [Android SDK](https://developer.android.com/tools/releases/platform-tools?hl=en) correctly to use the ADB function (remember to turn on the Developer Mode of your phone and allow debugging by the computer) 🍾
-
-### Run
 ```
-git clone https://github.com/AkimotoAyako/VisionTasker.git
+git clone 
 conda create -n visiontasker python=3.8
 pip install -r requirements.txt
+uvicorn main:app --reload
 ```
 
-Note to check that the gpu version of pytorch is used
-Model path: Put pre-trained models (target detection model and CLIP) under `pt_model/`
+### 项目配置
 
-### Input Method
-For text input on your phone, please refer to [ADBKeyBoard](https://github.com/senzhk/ADBKeyBoard) and install the corresponding applications on both your phone and computer.
+`core/LLM_api.py` 修改使用的LLM的key和id
 
-## 🚀 Usage
+`element/detect_text/text_detection.py` 修改OCR模型的key和id
 
-#### `/`
-- `main_en_auto.py`：Automates the entire process；
-- `main_zh_bystep.py`: Step by step automation (Interactive prompt in Chinese).
-    1. Enter the task content: If you use the task table in "data" for input：enter "m" first, and then enter the task number "xx" corresponding to the task table (VisionTasker\data\task.xlsx), or directly enter "m xxx".If you want to enter the task content directly: enter "m" first, then enter the task content.
-    2. Screenshot recognition: Input "i" (start with i to prevent redundant misinput); After the llm command output is completed by the operator, take the next screenshot until the task is completed.
-    3. To restart a task or start another task, just go back to step 1
-- `test_gpt4v_realworldword.py`: Benchmarks using GPT-4V. Mobile interface elements are pre-labeled with IDs. GPT-4V receives images and tasks and returns operation IDs.
-- `test_gpt4v_realworldword_withoutid.py`: Benchmarks using GPT-4V. GPT-4V receives images and tasks and returns the operation button name for human execution.
+## 文件说明
 
-#### `├─ data/`
-- `help_table/`: Examples for demonstration and help documentation.
-- `outputs/`: Output file path for UI recognition results.
-- `screenshot/`: Storage path for each step's screenshots.
+`main.py` 项目的启动文件，创建websocket程序，与前端进行通讯
 
-#### `├─ core/`
-Contains the main operation process scripts:
-- `Config.py`: Various configuration items (detection methods, language, models, output paths, etc.).
-- `LLM_api.py`: **Modify the key for the large language model here**.
+`server.py` 项目的后端运算文件，接受用户的请求，并帮助用户操作手机
 
-#### `├─ core_gpt4v/`
-Benchmarks using GPT-4V method's main operation scripts:
-- `LLM_api.py`: **Modify the key for the large language model here**.
+## 输入设备
 
-#### `├─ element/detect_text/`
-- `text_detection.py`: **Modify the key for the ocr model here (Line 135~136)**.
+请参考使用[ADBKeyBoard](https://github.com/senzhk/ADBKeyBoard)
 
-## 🍴 Model
+## 模型
+
 [☁️ Google Drive](https://drive.google.com/drive/folders/1ij5Y5JhUb8cPTAr8fZ0jfyenoNUqr5nP?usp=sharing)
 
 [☁️ Quark Cloud Drive](https://pan.quark.cn/s/f2f707e26a08)
 
-## 🌷Acknowledge
-Part of the implementation is based on the open-source project [MulongXie/GUI-Perceptual-Grouping](https://github.com/MulongXie/GUI-Perceptual-Grouping).
+## 致谢
 
-Without their contributions, our UI detection framework would not be as refined as it is today. We extend our sincere gratitude to them.
+本项目实现基于西安交通大学智能网络与网络安全教育部重点实验室提出的[基于视觉的移动设备任务自动化方案](https://arxiv.org/abs/2312.11190)，没有他们的贡献，本项目不会如此完善。在此，致以诚挚的谢意。

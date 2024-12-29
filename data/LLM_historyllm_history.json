@@ -65,10 +65,146 @@
     },
     {
         "role": "user",
-        "content": "Q：打开微信。"
+        "content": "Q：查看支付宝零钱余额。"
     },
     {
         "role": "assistant",
-        "content": "A：tap_action：点击['微信']。"
+        "content": "A：tap_action：点击['余额宝']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：查看支付宝零钱余额，现在已经进行了的操作有（点击['余额宝']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['返回键']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：查看支付宝零钱余额，现在已经进行了的操作有（点击['余额宝']）（点击['返回键']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['余额宝']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：查看支付宝零钱余额，现在已经进行了的操作有（点击['余额宝']）（点击['返回键']）（点击['余额宝']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['返回键']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：查看支付宝零钱余额，现在已经进行了的操作有（点击['余额宝']）（点击['返回键']）（点击['余额宝']）（点击['返回键']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['余额宝']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：查看支付宝零钱余额，现在已经进行了的操作有（点击['余额宝']）（点击['返回键']）（点击['余额宝']）（点击['返回键']）（点击['余额宝']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['返回键']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：查看支付宝零钱余额，现在已经进行了的操作有（点击['余额宝']）（点击['返回键']）（点击['余额宝']）（点击['返回键']）（点击['余额宝']）（点击['返回键']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['余额宝']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：查看支付宝零钱余额，现在已经进行了的操作有（点击['余额宝']）（点击['返回键']）（点击['余额宝']）（点击['返回键']）（点击['余额宝']）（点击['返回键']）（点击['余额宝']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['菜单、播放列表键']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：查看淘宝订单。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['淘宝']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：查看淘宝订单，现在已经进行了的操作有（点击['淘宝']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['我的淘宝']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：查看淘宝订单，现在已经进行了的操作有（点击['淘宝']）（点击['我的淘宝']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['我的订单']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：查看淘宝订单，现在已经进行了的操作有（点击['淘宝']）（点击['我的淘宝']）（点击['我的订单']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['待收货']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：打开QQ邮箱。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['QQ邮箱']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：退出QQ邮箱。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['返回键']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：退出QQ邮箱，现在已经进行了的操作有（点击['返回键']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['返回键']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：退出QQ邮箱，现在已经进行了的操作有（点击['返回键']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['手机屏幕旋转键']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：退出QQ邮箱，现在已经进行了的操作有（点击['返回键']）（点击['手机屏幕旋转键']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['返回键']。"
+    },
+    {
+        "role": "user",
+        "content": "Q：退出QQ邮箱，现在已经进行了的操作有（点击['返回键']）（点击['手机屏幕旋转键']）。"
+    },
+    {
+        "role": "assistant",
+        "content": "A：tap_action：点击['手机屏幕旋转键']。"
     }
 ]

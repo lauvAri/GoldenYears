@@ -12,6 +12,7 @@ from core.LLM_api import use_LLM
 from core.help_seq_getter import help_get_flag, help_seq_get
 from core.Config import *
 import logging
+from test_websocket import send_intermediate_data
 logging.disable(logging.DEBUG)
 logging.disable(logging.WARNING)
 
@@ -91,6 +92,8 @@ def client_main():
     print("\n*--------------------------------- START --------------------------------------*")
 
     message = "Q：" + input("🥰: Hi, I'm VisionTasker. What can I do for you~")  # Go to Alipay to analyze my spending in annual
+    #message = "Q：" + query  # Go to Alipay to analyze my spending in annual
+    
 
     # message = "Q：" + message
     if message.startswith("Q"):  # 处理以 "任务为:" 开头的消息
@@ -207,7 +210,7 @@ def client_main():
                     print("Please send the screenshot again and GPT will regenerate the operation command")
 
             response = json.dumps(order_list, ensure_ascii=False)  # 转换order_list为JSON格式
-
+            send_intermediate_data(response)
             print(f"Execute: {response}")  # 处理消息并生成回复
             response = eval(response)
 
@@ -217,7 +220,10 @@ def client_main():
                 pass
             elif isinstance(response, list):
                 order_list = response
-                operator(order_list)  # 传递服务器返回的order_list中的每个操作
+                op = operator(order_list)  # 传递服务器返回的order_list中的每个操作
+                if op == 0:
+                    print("操作完成")
+                    return 0
                 print("\n*---------------------------- √ ONE STEP COMPLETED ----------------------------*\n\n\n")
 
             else:

@@ -42,6 +42,7 @@ elif choose_phone == "真机redmi":
     DefaultInputKeyboard = "com.huawei.ohos.inputmethod/com.android.inputmethod.latin.LatinIME"
 elif choose_phone == 'Redmi':
     DeviceName = 'nfjjnbbimnjj7hi7'
+    DefaultInputKeyboard = "com.iflytek.inputmethod.miui/.FlyIME"
 ADBKeyboard = "com.android.adbkeyboard/.AdbIME"
 # 键盘输入需要安装ADBKeyboard.apk(网上找)
 # 输入法设置： 
